@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./src/styles/productsPageStyles.css" />
+
+    <title>VACHARI SHOP</title>
+  </head>
+<body>
+    <!-- HEADER -->
+    <section class="header">
+        <div class="container">
+          <header class="header-items">
+            <div class="header-left-part">
+                <a class="logo" href="index.html">
+                    <img class="logo" src="./src/assets/images/logo.svg" alt="logo"></img>
+                  </a>
+            </div>
+            <nav class="menu" id="menu">
+                <ul class="menu-list">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="./products-page.html">PRODUCTS</a></li>
+                    <li>
+                        <a href="./cart.html" class="cart">
+                            <span class="cart-icon">&nbsp;</span>
+                            <span class="badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="mobile-dropdown">
+                    <div class="dropdown-icon">&#9776;</div>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="./products-page.html">PRODUCTS</a></li>
+                        <li><a href="./cart.html">CART</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+          </header>
+        </div>
+      </section>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+        <div class="container">
+            <h2>SEE ALL OUR PRODUCTS</h2>
+            <div class="top-bar">
+                <div class="categories" id="categories"></div>
+                <div class="clear">
+                    <div class="clear-categories" id="clear-filter-button">CELAR FILTER</div>
+                </div>
+            </div>
+            <div class="products-content">
+                <div class="products-container">
+                   <div class="products-list" id="productsList">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGINATION -->
+    <section class="pagination-section">
+        <nav class="pagination-container" id="pagination-container">
+            <div class="container">
+                <div class="pagination-numbers-container">
+                    <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                        &lt;
+                    </button>
+                    <div id="pagination-numbers"></div>
+                    <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                        &gt;
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+    <!-- FOOTER -->
+      <section class="footer">
+        <div class="container">
+            <div class="footer-items">
+                <div class="footer-content">
+                    <div class="footer-top">
+                        <div class="footer-top-item">
+                            <div class="logo">
+                                <img src="./src/assets/images/logo.svg" alt="shop logo">
+                            </div>
+                            <ul class="footer-lists">
+                                <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                                <li><a href="#">hexashop@company.com</a></li>
+                                <li><a href="#">010-020-0340</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-top-item">
+                            <h4>Shopping &amp; Categories</h4>
+                            <ul class="footer-lists">
+                                <li><a href="#">Mens Shopping</a></li>
+                                <li><a href="#">Womens Shopping</a></li>
+                                <li><a href="#">Kids Shopping</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-top-item">
+                            <h4>Useful Links</h4>
+                            <ul class="footer-lists">
+                                <li><a href="#">Homepage</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-top-item">
+                            <h4>Help &amp; Information</h4>
+                            <ul class="footer-lists">
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">Tracking ID</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="under-footer">
+                            <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved. 
+                            </p>
+                            <ul class="social-media-list">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+
+      <script src="./src/script/views/products-page.js" type="module"></script>      
+</body>
+</html>

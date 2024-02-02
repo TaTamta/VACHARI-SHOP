@@ -1,0 +1,22 @@
+@import './sharedStyles.css';
+
+.thankyou-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px 100px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    position: unset;
+  }
+}

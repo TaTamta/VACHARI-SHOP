@@ -1,0 +1,81 @@
+@import './sharedStyles.css';
+
+#cart-container {
+  margin: 20px;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 24px;
+}
+
+#checkout-section {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#total-price {
+  font-weight: bold;
+}
+
+.cart-wrapper {
+  margin: 150px 0;
+}
+
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+}
+
+.bottom {
+  align-self: center;
+}
+
+.purchase-button {
+  color: #fff;
+  text-decoration: none;
+  font: 900 12px Lato;
+  padding: 8px 20px 8px 20px;
+  border: 1px solid black;
+  color: #999faf;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.purchase-button:hover {
+    color: #fff;
+    transition: 0.4s;
+    background: black;
+    border: 1px solid black;
+    color: #fff;
+  }
+
+@media screen and (min-width: 640px) {
+}
