@@ -68,8 +68,6 @@ function purchase() {
     return;
   }
 
-  console.log('here');
-
   const currentPrice = parseFloat(productPrice.textContent.split('$')[1]);
   const totalPayment = currentPrice * quantity;
 
