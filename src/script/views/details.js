@@ -4,7 +4,6 @@ import { fetchProductsData } from '../helpers.js';
 
 initializeDropdown();
 
-const detailsContainer = document.querySelector('.product-details');
 const productImage = document.querySelector('.product-design');
 const productTitle = document.querySelector('.title');
 const productDescription = document.querySelector('.description');
@@ -14,7 +13,6 @@ const quantityBadge = document.querySelectorAll('.quantity-badge');
 const totalText = document.querySelector('.total .total-text');
 const addToCartButton = document.getElementById('add-to-cart-button');
 const purchaseButton = document.getElementById('purchase-button');
-const cartBadge = document.querySelector('#add-to-cart-button .number');
 
 let quantity = 0;
 
@@ -40,7 +38,7 @@ function renderProductDetails(product) {
 }
 
 // Function to adjust quantity
-window.adjustQuantity = function (amount) {
+function adjustQuantity(amount) {
   quantity += amount;
   if (quantity < 0) {
     quantity = 0;
@@ -50,7 +48,7 @@ window.adjustQuantity = function (amount) {
     item.innerHTML = quantity;
   });
   updateTotal();
-};
+}
 
 // Function to update total based on quantity
 function updateTotal() {
@@ -62,24 +60,16 @@ function updateTotal() {
   addToCartButton.classList[isDisabled ? 'add' : 'remove']('disabled');
   purchaseButton.classList[isDisabled ? 'add' : 'remove']('disabled');
 }
-
-// Call updateTotal when initializing the page
 updateTotal();
-// Function to add product to cart
-window.addToCart = function () {
-  updateCartBadge(++quantity);
-};
-
-// Function to update cart badge
-function updateCartBadge(cartCount) {
-  cartBadge.textContent = cartCount;
-}
 
 // Function to redirect to checkout page
-window.purchase = function () {
+function purchase() {
   if (purchaseButton.classList.contains('disabled')) {
     return;
   }
+
+  console.log('here');
+
   const currentPrice = parseFloat(productPrice.textContent.split('$')[1]);
   const totalPayment = currentPrice * quantity;
 
@@ -87,18 +77,15 @@ window.purchase = function () {
   window.location.href = `checkout.html?id=${productId}&quantity=${quantity}&total=${totalPayment.toFixed(
     2
   )}`;
-};
+}
 
 // Event listeners for quantity buttons
 document
   .querySelector('.quantity-buttons .minus')
-  .addEventListener('click', () => window.adjustQuantity(-1));
+  .addEventListener('click', () => adjustQuantity(-1));
 document
   .querySelector('.quantity-buttons .plus')
-  .addEventListener('click', () => window.adjustQuantity(1));
-
-// Event listener for adding to cart
-addToCartButton.addEventListener('click', window.addToCart);
+  .addEventListener('click', () => adjustQuantity(1));
 
 // Event listener for purchase
-purchaseButton.addEventListener('click', window.purchase);
+purchaseButton.addEventListener('click', purchase);

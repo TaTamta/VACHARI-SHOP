@@ -85,37 +85,5 @@ function removeItem() {
 }
 
 function purchase() {
-  // Implement checkout logic here
   console.log('Checkout clicked');
-  // You can include your existing purchase logic here
 }
-
-// window.purchase = function () {
-//   const items = []; // An array to store items
-
-//   // Loop through each product on the page and gather relevant information
-//   document
-//     .querySelectorAll('.product-container')
-//     .forEach((productContainer) => {
-//       const productId = productContainer.dataset.productId;
-//       const quantity = parseInt(productContainer.dataset.quantity);
-//       const price = parseFloat(productContainer.dataset.price);
-
-//       items.push({
-//         productId,
-//         quantity,
-//         price,
-//       });
-//     });
-
-//   // Calculate total payment
-//   const totalPayment = items.reduce(
-//     (sum, item) => sum + item.price * item.quantity,
-//     0
-//   );
-
-//   // Redirect to checkout page with items array and total payment amount as query parameters
-//   window.location.href = `checkout.html?items=${encodeURIComponent(
-//     JSON.stringify(items)
-//   )}&total=${totalPayment.toFixed(2)}`;
-// };
