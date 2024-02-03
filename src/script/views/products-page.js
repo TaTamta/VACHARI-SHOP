@@ -11,8 +11,6 @@ import {
   handleActivePageNumber,
 } from '../pagination.js';
 
-// Import statements (if any)
-
 const paginationNumbers = document.getElementById('pagination-numbers');
 const nextButton = document.getElementById('next-button');
 const prevButton = document.getElementById('prev-button');
@@ -72,12 +70,16 @@ function filterByCategory(category) {
   isFilterApplied = true;
 
   // Fetch products based on the selected category
-  fetch(`https://fakestoreapi.com/products/category/${category}`)
-    .then((res) => res.json())
-    .then((json) => {
-      loadedProducts = json;
+  const serviceId = serviceIds.products;
+  const param = `category/${category}`;
+  fetchProductsData(serviceId, param)
+    .then((filteredProducts) => {
+      loadedProducts = filteredProducts;
       currentPage = 1;
       paginateList();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
     });
 }
 
@@ -151,5 +153,3 @@ function setCurrentPage(pageNum) {
 
 openDetailsPage('product-block');
 initializeDropdown();
-
-// ... (any additional code)

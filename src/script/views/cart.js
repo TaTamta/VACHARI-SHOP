@@ -8,15 +8,17 @@ const cartItemsElement = document.getElementById('cart-items');
 const totalPriceElement = document.getElementById('total-amount');
 
 // Fetch cart data
-fetch('https://fakestoreapi.com/carts/5')
-  .then((res) => res.json())
+let serviceId = serviceIds.carts;
+let param = '5';
+
+fetchProductsData(serviceId, param)
   .then((cartData) => {
-    // Fetch product details for each item in the cart
-    const productPromises = cartData.products.map((item) =>
-      fetch(`https://fakestoreapi.com/products/${item.productId}`).then((res) =>
-        res.json()
-      )
-    );
+    serviceId = serviceIds.products;
+
+    const productPromises = cartData.products.map((item) => {
+      param = item.productId;
+      return fetchProductsData(serviceId, param);
+    });
 
     Promise.all(productPromises)
       .then((products) => {
@@ -26,6 +28,9 @@ fetch('https://fakestoreapi.com/carts/5')
       .catch((error) =>
         console.error('Error fetching product details:', error)
       );
+  })
+  .catch((error) => {
+    console.error('Error:', error);
   });
 
 function renderCartItems(cartItems, products) {
@@ -76,7 +81,6 @@ function removeItem() {
     const removeButton = event.target.closest('.remove-button');
     const productContainer = removeButton.closest('.cart-item');
     productContainer.style.display = 'none';
-
   });
 }
 
