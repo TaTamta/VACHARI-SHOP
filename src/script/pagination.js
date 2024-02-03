@@ -1,4 +1,6 @@
 export function getPaginationNumbers(pageCount, paginationNumbers) {
+  paginationNumbers.innerHTML = '';
+
   for (let i = 1; i <= pageCount; i++) {
     appendPageNumber(i, paginationNumbers);
   }
